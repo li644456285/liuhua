@@ -1,57 +1,467 @@
-<!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="UTF-8">
-    <title>Liuhua by li644456285</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-  </head>
-  <body>
-    <section class="page-header">
-      <h1 class="project-name">Liuhua</h1>
-      <h2 class="project-tagline"></h2>
-      <a href="https://github.com/li644456285/liuhua" class="btn">View on GitHub</a>
-      <a href="https://github.com/li644456285/liuhua/zipball/master" class="btn">Download .zip</a>
-      <a href="https://github.com/li644456285/liuhua/tarball/master" class="btn">Download .tar.gz</a>
-    </section>
+<!doctype html>
+<html style="font-size: 50px;">
 
-    <section class="main-content">
-      <h3>
-<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="css/reset.css" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<script type="text/javascript" src="js/jquery-1.11.2.js"></script>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here <a href="https://guides.github.com/features/mastering-markdown/">using GitHub Flavored Markdown</a>, select a template crafted by a designer, and publish. After your page is generated, you can check out the new <code>gh-pages</code> branch locally. If you’re using GitHub Desktop, simply sync your repository and you’ll see the new branch.</p>
+	</head>
+	<style type="text/css">
+		body {
+			display: none;
+			background: #fff;
+			color: #000;
+		}
+		
+		.header {
+			text-align: center;
+			padding: 10px 10px 7px;
+		}
+		
+		.header .logo {
+			width: 95px;
+			height: 27px;
+		}
+		
+		.header .fr img {
+			width: 22px;
+			height: 25px;
+		}
+		
+		.mui-slider {
+			/*margin-bottom: 0.25rem;*/
+		}
+		
+		.mui-slider-indicator .mui-indicator {
+			display: inline-block;
+			width: 0.3rem;
+			height: 0.08rem;
+			margin: 0 0.08rem 0 0;
+			cursor: pointer;
+			border-radius: 0.08rem;
+			background: transparent;
+			box-shadow: 0 0 0px 0px rgba(130, 130, 130, .7);
+			border: 1px solid #fbca33;
+		}
+		
+		.mui-slider-indicator .mui-active.mui-indicator {
+			background: #fbca33;
+		}
+		
+		.mui-row {
+			padding: 0 10px;
+			text-align: center
+		}
+		
+		.mui-row.last_line {
+			margin-bottom: 0.4rem;
+		}
+		
+		.mui-row li {
+			margin-top: 0.26rem;
+		}
+		
+		.mui-row li a {
+			display: inline-block;
+		}
+		
+		.mui-row li img {
+			width: 38px;
+			height: 38px;
+		}
+		
+		.mui-row p {
+			font-size: 13px;
+			color: #000;
+			margin: 6px 0 0 0;
+			line-height: 13px;
+		}
+		
+		.index_info {
+			padding: 7px 10px 9px;
+			border-top: 1px solid #ccc;
+			border-bottom: 1px solid #ccc;
+		}
+		
+		.index_info .fl {
+			width: 6.25%;
+			height: 14px;
+		}
+		
+		.index_info .fr {
+			width: 93.75%;
+			font-size: 14px;
+			line-height: 14px;
+			height: 14px;
+			padding-left: 5px;
+			overflow: hidden;
+		}
+		.index_info .fr ul{
+			/*transition: transform 0.34s;*/
+		}
+		.index_info .fr a {
+			color: #000;
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			/*width: 50%;*/
+			/*background:Red;*/
+			display: block;
+		}
+		
+		.index_info .fl img {
+			width: 15px;
+			height: auto;
+			vertical-align: top;
+			line-height: 14px;
+		}
+		
+		.table_others {
+			width: 100%;
+		}
+		
+		.table_others a {
+			display: inline-block;
+			width: 100%;
+			height: 100%;
+			color: #000;
+		}
+		
+		.table_others tr {
+			height: 1.25rem;
+		}
+		
+		.table_others td {
+			position: relative;
+		}
+		
+		.table_others .up_td .title {
+			font-size: 15px;
+			margin: 11px 0 0 12.5px;
+		}
+		
+		.table_others .below_td .title {
+			font-size: 15px;
+			margin: 11px 0 0 12.5px;
+		}
+		
+		.table_others .left_td .des {
+			width: 2.4rem;
+			min-width: 120px;
+			height: 50px;
+			background: rgba(185, 127, 89, 0.8);
+			text-align: center;
+			padding-top: 5px;
+		}
+		
+		.table_others .left_td .title {
+			font-size: 18px;
+			color: #fff;
+		}
+		
+		.table_others .left_td .intro {
+			font-size: 12px;
+			color: #fff;
+		}
+		
+		.table_others .left_td {
+			border-right: 1px solid #ccc;
+			text-align: center;
+			/*background-image: url(images/td_left_bg.png);*/
+			background-position: center;
+			
+			
+			/*padding: 0 10px;*/
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: 80%;;
+		}
+		
+		.table_others .up_td {
+			border-bottom: 1px solid #ccc;
+		}
+		
+		.table_others .up_td img {
+			width: 1.13rem;
+			height: 0.86rem;
+			position: absolute;
+			right: 9px;
+			bottom: 7px;
+			;
+		}
+		
+		.table_others .below_td img {
+			width: 1.55rem;
+			height: 1.12rem;
+			position: absolute;
+			right: 9px;
+			bottom: 3px;
+		}
+		
+		.placeholder {
+			width: 6.4rem;
+			height: 3.15rem;
+			background: #ccc;
+		}
+		
+		.placeholder p {
+			font-size: 16px;
+			color: #fff;
+		}
+	</style>
 
-<h3>
-<a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Designer Templates</h3>
+	<body>
+		<div class="header">
+			<img class="logo" src="images/index_logo.png" alt="" />
+			<a href="vip/vip_index.html" class="fr"><img src="images/index_user.png" alt="" /></a>
+		</div>
+		<script type="text/temp" id="slider_temp">
+			{{if data && data.length > 0}}
 
-<p>We’ve crafted some handsome templates for you to use. Go ahead and click 'Continue to layouts' to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved.</p>
+			<div class="mui-slider-group mui-slider-loop">
+				<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+				<div class="mui-slider-item mui-slider-item-duplicate">
+					<a href="liuhuaintro/liuhua_intro.html?banner_id={{data[data.length-1].banner_id}}">
+						<img src="{{data[data.length-1].banner_img}}">
+					</a>
+				</div>
+				{{each data as v,i}}
+				<div class="mui-slider-item">
+					<a href="liuhuaintro/liuhua_intro.html?banner_id={{v.banner_id}}">
+						<img src="{{v.banner_img}}">
+					</a>
+				</div>
+				{{/each}}
+				<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+				<div class="mui-slider-item mui-slider-item-duplicate">
+					<a href="liuhuaintro/liuhua_intro.html?banner_id={{data[0].banner_id}}">
+						<img src="{{data[0].banner_img}}">
+					</a>
+				</div>
+			</div>
+			<div class="mui-slider-indicator">
 
-<h3>
-<a id="creating-pages-manually" class="anchor" href="#creating-pages-manually" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Creating pages manually</h3>
+				{{each data as v,i}} {{if i == 0}}
+				<div class="mui-indicator mui-active"></div>
+				{{else}}
+				<div class="mui-indicator"></div>
+				{{/if}} {{/each}}
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+			</div>
 
-<h3>
-<a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+			{{else}}
+			<div class="placeholder">
+				<p>暂无内容</p>
+			</div>
+			{{/if}}
+		</script>
+		<script type="text/temp" id="discount_temp">
+			<td rowspan="2" class="left_td">
+				<a class="des" href="discount/discount_index.html">
+					<div class="title">{{data.title}}</div>
+					<div class="intro">{{data.subhead}}</div>
+				</a>
+			</td>
+			<td class="up_td">
+				<a href="news/news_index.html">
+					<div class="title">新闻资讯</div>
+					<img src="images/index_news.png" alt="" />
+				</a>
+			</td>
+		</script>
 
-<p>You can @mention a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor’s GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+		<div id="slider" class="mui-slider">
 
-<h3>
-<a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Support or Contact</h3>
+		</div>
 
-<p>Having trouble with Pages? Check out our <a href="https://help.github.com/pages">documentation</a> or <a href="https://github.com/contact">contact support</a> and we’ll help you sort it out.</p>
+		<ul class="mui-row">
+			<li class="mui-col-xs-3">
+				<a href="shopping/shopping_index.html"><img src="images/index_shopping.png" /></a>
 
-      <footer class="site-footer">
-        <span class="site-footer-owner"><a href="https://github.com/li644456285/liuhua">Liuhua</a> is maintained by <a href="https://github.com/li644456285">li644456285</a>.</span>
+				<p>想购就GO</p>
+			</li>
+			<li class="mui-col-xs-3">
+				<a href="location/location_index.html"><img src="images/index_location.png" /></a>
+				<p>位置地图</p>
+			</li>
+			<li class="mui-col-xs-3">
+				<a href="#"><img src="images/index_fun.png" /></a>
+				<p>吃喝玩乐</p>
+			</li>
+			<li class="mui-col-xs-3">
+				<a href="http://www.liuhua117.com/zulin/"><img src="images/index_rent.png" /></a>
+				<p>招商租赁</p>
+			</li>
+		</ul>
+		<ul class="mui-row last_line">
+			<li class="mui-col-xs-3">
+				<a href="#"><img src="images/index_food.png" /></a>
 
-        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
-      </footer>
+				<p>排号点餐</p>
+			</li>
+			<li class="mui-col-xs-3">
+				<a href="#"><img src="images/index_ticket.png" /></a>
+				<p>电影购票</p>
+			</li>
+			<li class="mui-col-xs-3">
+				<a href="life_tool/life_tool_index.html"><img src="images/index_convinient.png" /></a>
+				<p>便捷工具</p>
+			</li>
+			<li class="mui-col-xs-3">
+				<a href="more_service/more_service_index.html"><img src="images/index_more.png" /></a>
+				<p>更多服务</p>
+			</li>
+		</ul>
+		<div class="index_info clear">
+			<div class="fl"><img src="images/index_inform.png" alt="" /></div>
+			<div class="fr">
+				
+			</div>
+		</div>
+		<table class="table_others">
+			<colgroup>
+				<col width="50%" />
+				<col width="50%" />
+			</colgroup>
+			<tr id="discount">
 
-    </section>
+			</tr>
+			<tr>
+				<td class="below_td">
+					<a href="wait_open.html">
+						<div class="title">停车缴费</div>
+						<img src="images/index_car.png" alt="" />
+					</a>
+				</td>
+			</tr>
+		</table>
+		<script src="js/template.js"></script>
+		<script src="js/common.js"></script>
+		<script src="js/mui.min.js"></script>
 
-  
-  </body>
+		<script type="text/javascript">
+			;
+			! function() {
+//				mui.init();
+
+				function get_discount_data(){
+					var url = "http://120.77.49.17:8080/liuhua/app/HomePage/getPrivilege.do";
+					$.ajax({
+						type:"post",
+						url:url,
+						data:"{}",
+						contentType: 'application/json;charset=UTF-8',
+						async: false
+					})
+					.success(function(result){
+					
+						var html = template('discount_temp',result);
+						$('#discount').html(html);
+						var img_url = result.data.privilege_img;
+//						url(images/td_left_bg.png)
+						$(".left_td").css('backgroundImage','url('+img_url+')');
+					})
+					.fail(function(){
+						
+					});
+				}
+				function get_slider_data() {
+					var url = "http://120.77.49.17:8080/liuhua/app/HomePage/showBanner.do";
+				
+					$.ajax({
+						url: url,
+						type: 'POST',
+						data: "{}",
+						contentType: 'application/json;charset=UTF-8',
+						async: false
+					})
+					.success(function(result) {
+						$('body').css('display', 'block');
+						var html = template('slider_temp', result);
+						console.log(result.data)
+						$('#slider').html(html);
+					})
+					.fail(function() {
+						location.href = 'error.html';
+					});
+				}
+				function get_run_info() {
+					var url = "http://120.77.49.17:8080/liuhua/app/HomePage/getMessageList.do";
+					
+					$.ajax({
+						url: url,
+						type: 'post',
+						data: "{'pageIndex':0,'pageSize':5}",
+						contentType: 'application/json;charset=UTF-8',
+						async: false
+					})
+					.success(function(result) {
+					
+						console.log(result);
+						fill_info(result);
+					})
+					.fail(function() {
+						alert('fail')
+//						location.href = 'error.html';
+					});
+				}
+				function fill_info(result){
+					for(var i = 0;i<result.data.length;i++){
+						var domNode = 
+						'<ul>'+
+							'<li>'+
+								'<a href="run_info/info_detail.html?message_id='+result.data[i].message_id+'">'+result.data[i].synopsis+'</a>'+
+							'</li>'+
+						'</ul>';
+						$('.index_info .fr').append(domNode);
+					}
+					
+					
+				}
+
+				function roll_up_down() {
+					var num = 0;
+					var step = $('.index_info .fr li').length;
+					var posY = 0;
+
+					var up = true;
+					var time = setInterval(function() {
+						if(up) {
+							num--;
+							if(num <= -(step)) {
+								up = false;
+							}
+
+						} else {
+							num = 0;
+							up = true;
+
+						}
+						posY = num * 14;
+
+						$('.index_info .fr ul').css("transform", "translateY(" + posY + "px)");
+					}, 2000)
+				}
+
+				function init() {
+					mui.init();
+					get_slider_data();
+					get_discount_data();
+					get_run_info();
+					roll_up_down();
+					var gallery = mui('.mui-slider');
+					gallery.slider({
+						interval: 1000 //自动轮播周期，若为0则不自动播放，默认为0；
+					});
+				}
+				init();
+
+			}();
+		</script>
+	</body>
+
 </html>

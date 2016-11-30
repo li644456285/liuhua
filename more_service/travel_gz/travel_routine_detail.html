@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="../../css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/common.css"/>
+		<script type="text/javascript" src="../../js/common.js"></script>
+		<style>
+			body{
+				background:#fff;
+			}
+			.section .main_pic{
+				width: 6.4rem;
+				height: 2.95rem;
+				background: url(../../images/view_gz.png);
+				background-size:100%;
+			}
+			.section .title{
+				font-size:18px;
+				padding:14px 12px;
+				border-bottom:1px solid #ccc;
+			}
+			.travel_plan{
+				border-collapse: collapse;
+				width: 100%;
+				font-size:14px;
+			}
+			.travel_plan .td_right{
+				padding:17px 12px 17px 0;
+				border-bottom:1px solid #ccc;
+			}
+			.travel_plan .td_left{
+				padding:17px 0 17px 12px;
+				vertical-align: top;
+				background: url(../../images/line.png);
+				background-repeat: repeat-y;
+				background-position:30px 0;
+				position:relative;
+				z-index:0;
+				
+			}
+			.travel_plan td{
+				overflow:hidden;
+			}
+			/*.travel_plan .td_left .up_pic{
+				background:red;
+				height:17px;
+			}*/
+			.travel_plan .td_left{
+				color:#ad6635;
+			}
+			.travel_plan .td_left .day{
+				position:relative;
+				background:#fff;
+				display:inline-block;
+				font-size:14px;
+				
+				padding-bottom:5px;
+				
+				
+			}
+			.travel_plan .td_left .day:after{
+				content:'';
+				display:block;
+				width: 6px;
+				height:6px;
+				background:url(../../images/circle.png);
+				
+				background-size:100%;
+				position:absolute;
+				left: 50%;
+				bottom:-5px;
+				
+				
+				
+			}
+			.travel_plan .td_left .day:before{
+				content:'';
+				display:block;
+				width: 6px;
+				height:6px;
+				background:url(../../images/circle.png);
+				
+				background-size:100%;
+				position:absolute;
+				left: 50%;
+				top:-4px;
+			}
+			.travel_plan tr:first-child .td_left .day:before{
+				content: '';
+				display:block;
+				height: 17px;
+				top:-17px;
+				background:#fff;
+				position: absolute;
+			}
+			.travel_plan tr:last-child .td_left .day:after{
+				content: '';
+				display:block;
+				height: 10rem;
+				/*top:-17px;*/
+				bottom:-10rem;
+				background:#fff;
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<a onclick="javascript :history.back(-1);">&lt;</a>
+			<div class="title">线路详情 </div>
+		</header>
+		
+		<div class="section">
+			<div class="main_pic">
+				
+			</div>
+			<div class="title">
+				广州市区4日玩法
+			</div>
+			<table class="travel_plan">
+				<colgroup>
+					<col width="18.7%"/>
+					<col width="81.3%"/>
+				</colgroup>
+				<tr>
+					<td class="td_left">
+						<!--<div class="up_pic"></div>-->
+						<span class="day">DAY</span><span>1</span>
+						<!--<div class="bottom_pic"></div>-->
+					</td>
+					<td class="td_right">石室圣心大教堂--沙面--陈家祠--上下九--商业步行街</td>
+				</tr>
+				<tr>
+					<td class="td_left">
+						<!--<div class="up_pic"></div>-->
+						<span class="day">DAY</span><span>1</span>
+						<!--<div class="bottom_pic"></div>-->
+					</td>
+					<td class="td_right">石室圣心大教堂--沙面--陈家祠--上下九--商业步行街</td>
+				</tr>
+				<tr>
+					<td class="td_left">
+						<!--<div class="up_pic"></div>-->
+						<span class="day">DAY</span><span>1</span>
+						<!--<div class="bottom_pic"></div>-->
+					</td>
+					<td class="td_right">石室圣心大教堂--沙面--陈家祠--上下九--商业步行街</td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>

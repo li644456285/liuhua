@@ -1,0 +1,144 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<style>
+			#header {
+				text-align: center;
+				background: url("images/woman.jpg");
+				
+				padding-top: 25px;
+			}
+			
+			#header img {
+				width: 61px;
+			}
+			
+			#header button {
+				background: #ad6635;
+				border-radius: 16px;
+				color: #fff;
+				border: none;
+				margin-top: 10px;
+			}
+			
+			#list {
+				overflow: hidden;
+				margin-top: 19px;
+				background: rgba(0, 0, 0, 0.3);
+				/*position: absolute;*/
+				/*bottom: 0;*/
+				/*width: 100%;*/
+				color: #fff;
+				padding: 10px 0;
+			}
+			
+			#list .list_item {
+				float: left;
+				width: 33.3%;
+				line-height: 15px;
+				opacity: 0.8;
+			}
+			
+			#list .list_item span:last-child {
+				font-size: 12px;
+			}
+			#content .mui-table-view{
+				margin-bottom: 10px;
+				line-height: 25px;
+				
+			}
+			#content .mui-table-view .mui-table-view-cell{padding: 15px;}
+			#content .mui-media img{width:25px;height: 25px;}
+			.mui-table-view .mui-media-object.mui-pull-left{margin-right: 20px;}
+			.mui-table-view-cell:after{left: 50px;}
+		</style>
+		<div id="header">
+			<img src="images/file.png" alt="" /><br>
+			<button type="button">请登陆/注册</button>
+			<div id="list">
+				<div class="list_item">
+					<span>11</span><br>
+					<span>提货卷</span>
+				</div>
+				<div class="list_item">
+					<span>11</span><br>
+					<span>积分</span>
+				</div>
+				<div class="list_item">
+					<span>11</span><br>
+					<span>优惠券</span>
+				</div>
+
+			</div>
+
+		</div>
+
+		<div id="content">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell mui-media">
+
+					<a href="javascript:;" class="mui-navigate-right">
+						<img class="mui-media-object mui-pull-left" src="images/info.png">
+						<div class="mui-media-body">
+							消息中心
+						</div>
+					</a>
+				</li>
+			</ul>
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell mui-media">
+
+					<a href="javascript:;" class="mui-navigate-right">
+						<img class="mui-media-object mui-pull-left" src="images/cash.png">
+						<div class="mui-media-body">
+							我的现金券
+						</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media">
+
+					<a href="javascript:;" class="mui-navigate-right">
+						<img class="mui-media-object mui-pull-left" src="images/about.png">
+						<div class="mui-media-body">
+							关于流花
+						</div>
+					</a>
+				</li>
+			</ul>
+			
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell mui-media">
+
+					<a href="javascript:;" class="mui-navigate-right">
+						<img class="mui-media-object mui-pull-left" src="images/wen.png">
+						<div class="mui-media-body">
+							常见问题
+						</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media">
+
+					<a href="javascript:;" class="mui-navigate-right">
+						<img class="mui-media-object mui-pull-left" src="images/mai.png">
+						<div class="mui-media-body">
+							专属客服
+						</div>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+	</body>
+
+</html>

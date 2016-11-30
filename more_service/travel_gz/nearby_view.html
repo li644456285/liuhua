@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../../css/reset.css" />
+		<script type="text/javascript" src="../../js/common.js"></script>
+	</head>
+	<style type="text/css">
+		
+		.list {
+			width: 100%;
+			overflow: hidden;
+		}
+		
+		.list .fl {
+			margin-right: 2%;
+			width: 36%;
+			position: relative;
+		}
+		
+		.list .fl img {
+			width: 100%;
+			height: auto;
+		}
+		
+		.list .fr .title {
+			font-size: 14px;
+			/*font-weight: bold;*/
+			line-height: 14px;
+			margin: 8px 0 12px;
+			color: #000;
+		}
+		
+		.list .fr .intro {
+			font-size: 12px;
+			color: #959595;
+			text-overflow: ellipsis;
+			display: -webkit-box;
+			-webkit-line-clamp: 2;
+			-webkit-box-orient: vertical;
+			overflow: hidden;
+		}
+		
+		.list .fr {
+			width: 62%;
+			padding-right: 5px;
+		}
+		
+		.list .fl:after {
+			content: '';
+			height: 1px;
+			display: block;
+			background: #ccc;
+			margin-top: -2px;
+			width: 6.4rem;
+			left: 105%;
+			position: absolute;
+		}
+		body{
+			background:#fff;
+		}
+		
+		.body{
+			
+			padding-top: 4px;
+			
+		}
+	</style>
+
+	<body>
+		<div class="body">
+			<a href="">
+				<ul class="list clear">
+					<li class="fl"><img src="../../images/view_list.png"></li>
+					<li class="fr">
+						<p class="title">海心沙</p>
+						<p class="intro">亚运会开幕式举办地亚运会开幕式举办地亚运会开幕式举办地亚运会开幕式开</p>
+					</li>
+				</ul>
+			</a>
+			<a href="">
+				<ul class="list clear">
+					<li class="fl"><img src="../../images/view_list.png"></li>
+					<li class="fr">
+						<p class="title">海心沙</p>
+						<p class="intro">亚运会开幕式举办地亚运会开幕式举办地亚运会开幕式举办地亚运会开幕式举办地亚运</p>
+					</li>
+				</ul>
+			</a>
+		</div>
+		<script src="../../js/mui.min.js"></script>
+		<script type="text/javascript" src="../../js/jquery-1.11.2.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			var gallery = mui('.mui-slider');
+			gallery.slider({
+				interval: 2000 //自动轮播周期，若为0则不自动播放，默认为0；
+			});
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="../css/common.css" />
+		<script type="text/javascript" src="../js/common.js"></script>
+		<style>
+			.section {
+				padding: 0 15px;
+			}
+			
+			.section .title {
+				font-size: 0.4rem;
+				font-weight: bold;
+				margin: 26px 0 7px 0;
+			}
+			
+			.section .time {
+				font-size: 12px;
+				color: #959595;
+				margin-bottom: 20px;
+			}
+			
+			.section .intro {
+				font-size: 14px;
+				text-indent: 2em;
+				text-align: justify;
+				overflow: hidden;
+				word-break: break-all;
+			}
+	
+		</style>
+	</head>
+
+	<body>
+		<header>
+			<a onclick="javascript :history.back(-1);">&lt;</a>
+			<div class="title">广州流花展贸中心 </div>
+		</header>
+		<script type="text/temp" id="content_temp">
+			{{if data}}
+			
+			<div class="title">{{data.title}}</div>
+			<div class="time">{{data.create_time}}</div>
+			<div class="intro">
+
+				{{data.information_content}}
+			</div>
+			{{else}}
+			<div style="font-size:16px;padding-top:15px;">暂无内容</div>
+			{{/if}}
+		</script>
+		<div class="section">
+			
+		</div>
+	</body>
+	<script type="text/javascript" src="../js/jquery-1.11.2.js"></script>
+	<script type="text/javascript" src="../js/template.js"></script>
+	<script>
+		;! function() {
+			var information_id;
+
+			function ray_html() {
+				var url = "http://120.77.49.17:8080/liuhua/app/HomePage/getInformationContent.do";
+				$.ajax({
+						type: "post",
+						url: url,
+						data: "{'information_id':" + parseInt(information_id) + "}",
+						contentType: 'application/json;charset=UTF-8',
+						async: false,
+					})
+					.success(function(result) {
+						template.config("escape", false);
+						console.log(result.data)
+				
+						var html = template('content_temp', result);
+						$('.section').html(html);
+
+					})
+					.error(function() {
+						location.href = "../error.html";
+					});
+			}
+
+			function getQueryString(name) {
+				var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+				var r = window.location.search.substr(1).match(reg);
+				if(r != null) return unescape(r[2]);
+				return null;
+			}
+			
+			function init() {
+				information_id = getQueryString("information_id");
+				ray_html();
+			}
+			init();
+		}();
+	</script>
+
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" href="../css/reset.css" />
+		<link rel="stylesheet" href="../css/common.css" />
+		<script type="text/javascript" src="../js/common.js"></script>
+		<style>
+			body{
+				background:#f2f2f2;
+			}
+			.header{
+				width: 6.4rem;
+				height: 3.84rem;
+				background-image: url("../images/vip_bg.png");			
+				background-size: 100% 100%;
+				background-position: center;
+				padding-top:0.5rem;
+			}
+			.header .photo{
+				width: 1.52rem;
+				height: 1.52rem;
+				background:rgba(255,255,255,0.3);
+				border-radius:50%;
+				padding:3px;
+				margin:0 auto;
+			}
+			.header .photo img{
+				width: 100%;
+				height: 100%;
+				border-radius:50%;
+				
+			}
+			.header .name{
+				font-size:18px;
+				color:#fff;
+				text-align:center;
+				margin:0.28rem 0 0.17rem 0;
+			}
+			.header .score{
+				font-size:13px;
+				color:#fff;
+				width: 85px;
+				
+				line-height:25px;
+				text-align:center;
+				border-radius:25px;
+				border:2px solid #ad6635;
+				margin:0 auto;
+			}
+			.list li:first-child{
+				margin-bottom:10px;
+			}
+			.list li a{
+				display:block;
+				/*padding:10px 0px 10px 10px;*/
+				background:#fff;
+			}
+			
+			.list li .left{
+				
+				width: 16%;
+				font-size:14px;
+				padding:10px 0 10px 10px;
+				/*padding:0 17.5px 0 8.5px;*/
+			}
+			.list li .left img{
+				width: 25px;
+				height:25px;
+				vertical-align: top;
+			}
+			.list li a.trouble .right{
+				border-bottom:1px solid #ccc;
+			}
+			.list li .right{
+				width: 84%;
+				/*padding-right:10px;*/
+				padding:10px 10px 10px 0;
+				line-height:24px;
+				font-size:14px;
+				color:#333;
+			}
+			.list li .right .fr{
+				/*color:#999;*/
+			}
+			
+			.section .mask{
+				width: 100%;
+				height: 100%;
+				background:rgba(0,0,0,0.5);
+				position:fixed;
+				display:none;
+			}
+			.section .dailog{
+				width: 245px;
+				height: 105px;
+				position:fixed;
+				top:4rem;
+				left:0;
+				right:0;
+				margin:0 auto;
+				font-size:16px;
+				text-align:center;
+				background:#fff;
+				border-top-left-radius:5px;
+				border-top-right-radius:5px;
+				display:none;
+			}
+			.section .number{
+				padding:21.5px;
+			}
+			.section .confirm .fl{
+				width: 50%;
+				padding:15px;
+				background:#ae6636;
+				color: #fff;
+			}
+			.section .confirm .fl a{
+				display:block;
+				color: #fff;
+				
+				margin: -15px;
+				padding:15px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<header>
+			<a href="../index.html"><img src="../images/home.png" alt="" /></a>
+			<div class="title">会员中心</div>
+		</header>
+		<div class="section">
+			<div class="mask"></div>
+			<div class="dailog">
+				<div class="number">020-26089667</div>
+				<div class="confirm clear">
+					<div class="fl cancel">取消</div>
+					<div class="fl"><a href="tel:10086">呼叫</a></div>
+				</div>
+				
+			</div>
+			<div class="header">
+				<div class="photo"><img src="../images/vip_photo.png" alt="" /></div>
+				<div class="name">开心不蓝瘦</div>
+				<div class="score">积分：123</div>
+			</div>
+			<ul class="list">
+				<li>
+					<a href="info_center.html" class="clear">
+						<div class="left fl"><img  src="../images/vip_dailog.png"/></div>
+						<div class="right fl">
+							<div class="fl">消息中心</div>
+							<div class="fr">&gt;</div>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="common_matter.html" class="clear trouble">
+						<div class="left fl"><img  src="../images/vip_matter.png"/></div>
+						<div class="right fl">
+							<div class="fl">常见问题</div>
+							<div class="fr">&gt;</div>
+						</div>
+					</a>
+					<a href="#" class="clear help">
+						<div class="left fl"><img  src="../images/vip_help.png"/></div>
+						<div class="right fl">
+							<div class="fl">专属客服</div>
+							<div class="fr">&gt;</div>
+						</div>
+					</a>
+				</li>
+				
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+	</body>
+	<script type="text/javascript" src="../js/jquery-1.11.2.js"></script>
+	<script>
+		$('.help').click(function(){
+			$('.mask,.dailog').css('display','block');
+		})
+		$('.cancel').click(function(){
+			$('.mask,.dailog').css('display','none');
+		})
+	</script>
+</html>

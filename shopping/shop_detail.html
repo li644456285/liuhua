@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html style="font-size:50px;">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="../css/common.css" />
+		<script type="text/javascript" src="../js/common.js"></script>
+	</head>
+	<style>
+		
+		.content .bg{
+			width: 6.4rem;
+			height: 3.95rem;
+			background: url(../images/index_test.png);
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center;
+			position:relative;
+			
+			border-bottom:11px solid #f2f2f2;
+		}
+		.content .bg .shop_logo{
+			position:absolute;
+			left: 15px;
+			bottom: 12px;
+			font-size:15px;
+		}
+		.content .bg .shop_logo img{
+			width: 39px;
+			height: 39px;
+			vertical-align: middle;
+			margin-right:8px;
+		}
+		.content .bg .shop_logo span{
+			
+			color:#fff;
+			vertical-align: middle;
+		}
+		.content .banner{
+			font-size:15px;
+			border-bottom:4.5px solid #f2f2f2;
+		}
+		.content .banner>div{
+			width: 50%;
+			text-align:center;
+			padding:14px 0;
+		}
+		.content .banner>div.active{
+			color: #93572f;
+		}
+		.content .banner>div.active span{
+			position:relative;
+			
+		}
+		.content .banner>div.active span:after{
+			content:"";
+			height:2px;
+			display:block;
+			background:#93572f;
+			position:absolute;
+			width: 100%;
+			margin-top:8px;
+			left:0;
+		}
+		
+	</style>
+	<body>
+		<header>
+			<a onclick="javascript :history.back(-1);">&lt;</a>
+			<div class="title">店铺详情 </div>
+			
+		</header>
+		<div class="content">
+			<div class="bg">
+				<div class="shop_logo">
+					<img src="../images/shop_logo.png" alt="" />
+					<span class="shop_name">店铺名称</span>
+				</div>
+			</div>
+			<div class="banner clear">
+				<div class="fl active shop"><span>店铺详情</span></div>
+				<div class="fl pro"><span>产品介绍</span></div>
+			</div>
+			<div class="tab_load">
+				
+			</div>
+		</div>
+		
+	</body>
+	<script type="text/javascript" src="../js/jquery-1.11.2.js"></script>
+	<script type="text/javascript" src="../js/hammer-min.js"></script>
+	<script>
+		;!function(){
+			function init(){
+				$('.tab_load').load("shop_intro.html");
+				bind_event();
+			}
+			function bind_event(){
+				
+				var shop_span = new Hammer($('.banner .shop span')[0]);
+				var pro_span = new Hammer($('.banner .pro span')[0]);
+				shop_span.on('tap',shop_event);
+				pro_span.on('tap',pro_event);
+			}
+			function shop_event(){
+				$('.banner .pro').removeClass('active');
+				$('.banner .shop').addClass('active');
+				$('.tab_load').load("shop_intro.html");
+			}
+			function pro_event(){
+				$('.banner .shop').removeClass('active');
+				$('.banner .pro').addClass('active');
+				$('.tab_load').load("pro_intro.html");
+			}
+			init();
+		}();
+	</script>
+</html>

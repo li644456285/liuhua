@@ -1,0 +1,104 @@
+
+
+header {
+	height: 44px;
+	background: #ae6636;
+	font-size: 17px;
+	color: #fff;
+	text-align: center;
+	position: relative;
+	padding: 10px 0;
+}
+
+header a {
+	color: #fff;
+	position: absolute;
+	left: 10px;
+	font-size: 20px;
+	display: inline-block;
+	line-height: 20px;
+	/*min-width: 25px;*/
+	text-align: center;
+}
+header .title{
+	line-height:26px;
+}
+header .title img{
+	width: 105px;
+	height: 32px;
+	margin-top:-5px;
+	
+}
+header a img{
+	width: 19px;
+	height: 19px;
+}
+section .title {
+	font-size: 16px;
+	padding: 10px;
+	background: #f2f2f2;
+}
+
+
+ 
+section .con ul {
+	overflow: hidden;
+	margin-bottom: 18px;
+}
+
+section .con ul li {
+	width: 33.3%;
+	text-align: center;
+	font-size: 14px;
+	float: left;
+}
+
+section .con ul li a {
+	display: inline-block;
+	margin-bottom: 10px;
+}
+
+section .con ul li img {
+	width: 80px;
+	height: 80px;
+	/*margin-bottom:10px;*/
+	vertical-align: top;
+}
+
+section .con ul:first-child {
+	padding-top: 28px;
+}
+
+.bus_table {
+	font-size: 13px;
+	background: #fff;
+	text-align: justify;
+	border: 1px solid #c4c4c4;
+	margin-bottom:17px;
+}
+
+.bus_table tr {
+	border-bottom: 1px solid #c4c4c4;
+	line-height: 19px;
+}
+
+.bus_table .td_header img {
+	vertical-align: top;
+	width: 19px;
+	height: auto;
+	margin-right: 10px;
+}
+
+.bus_table tr td {
+	padding: 12px;
+}
+
+.bus_table tr .td_left {
+	border-right: 1px solid #c4c4c4;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.bus_table tr:last-child {
+	border-bottom: none;
+}

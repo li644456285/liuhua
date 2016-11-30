@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="../css/common.css" />
+		<script type="text/javascript" src="../js/common.js"></script>
+		<style>
+			header{
+				width: 100%;
+				position:absolute;
+				z-index:1;
+			}
+			header .dir{
+				position:absolute;
+				right:10px;
+				top:12px;
+			}
+			header .dir img{
+				width: 21.5px;
+				height:auto;
+				/*height: 22.5px;*/
+			}
+			header .search{
+				
+				position: relative;
+				width: 225px;
+				margin:0 auto;
+				margin-top:-4px;
+				border-radius:5px;
+			}
+			header .search img{
+				position:absolute;
+				width: 14px;
+				height:auto;
+				left: 26px;
+				top: 8px;
+			}
+			header .search input{
+				width: 225px;
+				color:#959595;
+				line-height: 32px;;
+				border: none;
+				border-radius:5px;
+				text-align:center;
+				background:rgba(255,255,255,0.8);
+				font-size:12px;
+				
+			}
+			.content{
+				position:fixed;
+				top:44px;
+				z-index: 0;
+				width: 100%;
+				height: 100%;
+			}
+			.content .home_view .bg{
+				width: 6.4rem;
+				height: 3.5rem;
+				
+				background:url(../images/pingmiantu.png);
+				background-size:100%;
+				/*margin-bottom:0.8rem;*/
+			}
+			.content .zone{
+				position:fixed;
+				width: 100%;
+				bottom:47px;
+			}
+			.content .zone ul{
+				border-top:1px solid #ccc;
+				
+				
+			}
+			.content .zone .fl{
+				width: 33.3%;
+				padding: 0.29rem 0;
+				text-align:center;
+				font-size:15px;
+				border-right:1px solid #ccc;
+			}
+			.content .zone .fl:last-child{
+				border-right:none;
+			}
+			.content .zone .fl img{
+				width: 47px;
+				height: 47px;
+				
+			}
+			.content .zone .fl p{
+				margin-top:6px;
+				line-height:15px;
+			}
+			
+			.footer ul{
+				width: 100%;
+				background:#fff;
+				position:fixed;
+				bottom:0;
+				border-top:1px solid #ccc;
+				z-index:3;
+				/*height: 47px;*/
+			}
+			.footer li{
+				text-align: center;
+				font-size:16px;
+				padding:15px 0;
+				line-height: 16px;
+			}
+			.footer li img{
+				height: 16px;
+				width: auto;
+				vertical-align: top;
+			}
+			.footer li:nth-child(1){
+				width: 39.5%;
+				border-right:1px solid #ccc;
+			}
+			.footer li:nth-child(2){
+				width: 39.5%;
+				border-right:1px solid #ccc;
+			}
+			.footer li:nth-child(3){
+				width: 21%;
+			}
+			.footer li:nth-child(4){
+				width: 21%;
+			}
+			.footer li.up:after{
+				content:'∧';
+				font-weight:900;
+			}
+			.footer li.down:after{
+				content:'∨';
+				font-weight:900;
+			}
+			.hide{
+				display:none;
+			}
+			.content .full_view{
+				width: 100%;
+				height: 100%;
+				
+			}
+			.full_view .bg{
+				width: 100%;
+				height: 100%;
+				background:url('../images/test.png');
+			}
+			.pop .build{
+				position:fixed;
+				z-index: 3;
+				width: 100%;
+				background:#fff;
+				bottom:47px;
+			}
+			.pop .build li{
+				float:left;
+				width: 33.3%;
+				padding:15px 0;
+				font-size:13px;
+				text-align:center;
+				/*color: #959595;*/
+				
+			}
+			.pop .build li.select{
+				color: #ad6635;
+			}
+			.pop .mask{
+				background:rgba(0,0,0,0.5);
+				
+				position:fixed;
+			
+				width: 100%;
+				height: 100%;
+				z-index: 2;
+			}
+			.pop .floor{
+				position:fixed;
+				z-index:3;
+				background:#fff;
+				width: 100%;
+				border-top:1px solid #ccc;
+				bottom:47px;
+			}
+			.pop .floor li{
+				font-size:13px;
+				padding:15px 18px;
+				border-bottom:1px solid #ccc;
+				position: relative;
+			}
+			.pop .floor li:last-child{
+				border-bottom: none;
+			}
+			.pop .floor li.select:after{
+				content:'√';
+				position:absolute;
+				right: 18px;
+				font-size:17px;
+				top:15px;
+				color:#ad6635;
+			}
+			.pop .floor li.select a{
+				color:#ad6635;
+			}
+			.pop .floor a{
+				margin:-15px -18px;
+				padding:15px 18px;
+				display: block;
+				color:#000;
+			}
+			.right_dir .mask{
+				width: 100%;
+				height: 100%;
+				top:44px;
+				position:fixed;
+				background:rgba(0,0,0,0.5);
+				z-index:4;
+			}
+			.right_dir ul{
+				background:#e9e9e9;
+				position: fixed;
+				z-index:5;
+				width: 55%;
+				right:0;
+				top:44px;
+				height: 100%;
+			}
+			.right_dir li{
+				font-size:15px;
+				padding:12px 10px;
+				border-bottom:1px solid #ccc;
+				position:relative;
+			}
+			.right_dir li.up:after{
+				content:'∧';
+				font-weight:900;
+				position:absolute;
+				right:10px;
+				top:11px;
+				font-size:17px;
+			}
+			.right_dir li.down:after{
+				content:'∨';
+				font-weight:900;
+				position:absolute;
+				right:10px;
+				top:11px;
+				font-size:17px;
+			}
+			.right_dir li a{
+				margin:-12px -10px;
+				padding:12px 10px;
+				
+				color:#000;
+				display:block;
+			}
+			.alert .mask{
+				position:fixed;
+				top:0;
+				width: 100%;
+				height: 100%;
+				background:rgba(0,0,0,0.5);
+				z-index: 5;
+			}
+			.alert .info{
+				width: 251px;
+				background:#fff;
+				position:fixed;
+				left:0;
+				right:0;
+				margin:0 auto;
+				top:3.26rem;
+				z-index:5;
+				border-radius:5px;
+				text-align: center;
+			}
+			.alert .info p:first-child{
+				font-size:16px;
+				padding:0.36rem 0 0.2rem;
+				
+			}
+			.alert .info p:nth-child(2){
+				font-size:14px;
+				color:#959595;
+				padding-bottom:0.36rem;
+				border-bottom:1px solid #ad6635;
+				
+			}
+			.alert .info .i_know{
+				padding:0.32rem 0;
+				font-size:15px;
+				color:#ad6635;
+			}
+			.content .table_shopping {
+				width: 100%;
+				border-collapse: separate;
+				padding-top:2px;
+				
+				
+			}
+			.table_shopping tr{
+				position:relative;
+				
+			}
+			.table_shopping .td_left {
+				padding: 1px 12px 1px 0;
+			}
+			
+			.table_shopping .td_left img {
+				width: 2.28rem;
+				height: 2.32rem;
+				vertical-align: top;
+				
+			}
+			.table_shopping .td_left a{
+				display:block;
+				position:absolute;
+				width: 100%;
+				height: 100%;
+				/*background:red;*/
+				top:0;
+			}
+			.table_shopping .td_right {
+				padding-right: 0.3rem;
+				border-bottom: 1px solid #ccc;
+				position: relative;
+				vertical-align: top;
+			}
+			
+			.table_shopping .td_right .title {
+				font-size: 14px;
+				margin: 10px 0;
+			}
+			
+			.table_shopping .td_right .classfy {
+				font-size: 11px;
+				color: #ae6636;
+				/*padding:2px 8px;*/
+				line-height: 17px;
+				border: 1px solid #ae6636;
+				border-radius: 15px;
+				width: 50px;
+				text-align: center;
+			}
+			
+			.table_shopping .td_right .bottom {
+				width: 100%;
+				padding-right: 0.3rem;
+			}
+			
+			.table_shopping .td_right .bottom .fl {
+				width: 50%;
+			}
+			
+			.table_shopping .td_right .bottom .fr {
+				width: 50%;
+			}
+			
+			.table_shopping .td_right .bottom {
+				font-size: 12px;
+				position: absolute;
+				bottom: 0;
+				padding-bottom: 0.4rem;
+				;
+			}
+			
+			.table_shopping .td_right .bottom .fr a {
+				text-align: right;
+				width: 100%;
+				display: block;
+			}
+			
+			.table_shopping .td_right .bottom .fr img {
+				width: 13px;
+				height: 14px;
+			}
+			
+			.table_shopping .td_right .bottom .fr span {
+				color: #ae6636;
+				vertical-align: top;
+			}
+			.table_shopping .wrap{
+				display:block;
+				background:Red;
+			}
+			.footer .tab_list{
+				padding:4.5px 0;
+				
+			}
+			.footer .tab_list img{
+				height: 21px;
+			}
+			
+			.footer .tab_list a{
+				font-size:12px;
+				color:#000;
+				display:block;
+				text-align:center;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<a onclick="javascript :history.back(-1);">&lt;</a>
+			<div class="search">
+				<span class="search_png"><img src="../images/search.png" alt="" /></span>
+				<input type="text" placeholder="请输入你要搜索的关键字"/>
+			</div>
+			<div class="fr dir"><img src="../images/dir.png" alt="" /></div>
+		</header>
+		<script type="text/temp" id="total_view">
+			<div class="home_view">
+				<div class="bg"></div>
+				<div class="zone">
+					<ul class="clear">
+						<li class="fl">
+							<img src="../images/eat.png" alt="" />
+							<p>食</p>
+						</li>
+						<li class="fl">
+							<img src="../images/you.png" alt="" />
+							<p>游</p>
+						</li>
+						<li class="fl">
+							<img src="../images/chuang.png" alt="" />
+							<p>创</p>
+						</li>
+						
+					</ul>
+					<ul class="clear">
+						<li class="fl">
+							<img src="../images/zhan.png" alt="" />
+							<p>展</p>
+						</li>
+						<li class="fl">
+							<img src="../images/wear.png" alt="" />
+							<p>穿</p>
+						</li>
+						<li class="fl">
+							<img src="../images/fun.png" alt="" />
+							<p>娱</p>
+						</li>
+						
+					</ul>
+				</div>
+			</div>
+		</script>
+		<script type="text/temp" id="full_view">
+			<div class="full_view">
+				<div class="bg">
+				
+				</div>
+			</div>
+			
+		</script>
+		<script type="text/temp" id="shopping_list">
+			<table class="table_shopping">
+				<colgroup>
+					<col width="3%" />
+					<col width="97%" />
+				</colgroup>
+				<tr>
+					<td class="td_left">
+						
+						<img src="../images/view_list.png" alt="" />
+						
+					</td>
+					<td class="td_right">
+						<div class="title">商铺名字ABDKJDI</div>
+						<div class="classfy">化妆品</div>
+						<div class="bottom clear">
+							<div class="fl">A区3205铺</div>
+							<div class="fr">
+								<a href="shopping_index.html">
+									<img src="../images/arr_go.png" alt="" />
+									<span>到这里去</span>
+								</a>
+							</div>
+						</div>
+					</td>
+
+				</tr>
+				<tr>
+					<td class="td_left">
+						<img src="../images/view_list.png" alt="" />
+					</td>
+					<td class="td_right">
+						<div class="title">商铺名字ABDKJDI</div>
+						<div class="classfy">化妆品</div>
+						<div class="bottom clear">
+							<div class="fl">A区3205铺</div>
+							<div class="fr">
+								<a href="">
+									<img src="../images/arr_go.png" alt="" />
+									<span>到这里去</span>
+								</a>
+							</div>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</script>
+		<div class="content">
+			
+			
+			
+			
+			
+		</div>
+		<div class="footer">
+			<ul class="clear">
+				<li class="fl up select_build">
+					<span data-id='1'>流花总览</span>
+				</li>
+				<li class="fl up select_floor">
+					<span>选楼层</span>
+				</li>
+				<li class="fl tab_map">
+					<a href="javascript:;"><img src="../images/list.png" alt="" /></a>
+					
+				</li>
+				<li class="fl tab_list hide">
+					<a href="javascript:;">
+						<img src="../images/map_page.png" alt="" />
+						<p>地图形式</p>
+					</a>
+
+				</li>
+			</ul>
+		</div>
+		<div class="right_dir hide">
+			<div class="mask"></div>
+			<ul>
+				<li class="up"><a href="">食</a></li>
+				<li class="up"><a href="">食</a></li>
+				<li class="down"><a href="">食</a></li>
+			</ul>
+		</div>
+		<div class="pop">
+				
+			<div class="build hide">
+				<ul class="clear">
+					<li class="select"><span>流花总览</span></li>
+					<li><span>流花总览1</span></li>
+					<li><span>流花总览2</span></li>
+					<li><span>流花总览3</span></li>
+					<li><span>流花总览4</span></li>
+					
+				</ul>
+			</div>
+			<div class="mask hide"></div>
+			<div class="floor hide">
+				<ul>
+					<li><a>1F</a></li>
+					<li class="select"><a>2F</a></li>
+					<li><a>3F</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="alert hide">
+			<div class="mask"></div>
+			<div class="info">
+				<p>选楼层</p>
+				<p>请先选择所在展馆</p>
+				<div class="i_know"><span>我知道了</span></div>
+			</div>
+			
+		</div>
+	</body>
+	<script type="text/javascript" src="../js/jquery-1.11.2.js"></script>
+	<script type="text/javascript" src="../js/template.js"></script>
+	<script type="text/javascript" src="../js/hammer-min.js"></script>
+	<script>
+	
+		;!function(){
+			var data = '0';
+			function init(){
+//				
+//				refresh_home_view();
+				bindEvent();
+//				refresh_full_view();
+//				refresh_shopping_list();
+				refresh();
+			}
+			function bindEvent(){
+//				console.log($('.select_build')[0])
+				var select_build = new Hammer($('.select_build span')[0]);
+				var select_floor = new Hammer($('.select_floor span')[0]);
+				
+				var i_know = new Hammer($('.alert .i_know')[0]);
+				var tab_map = new Hammer($('.tab_map')[0]);
+				var tab_list = new Hammer($('.tab_list')[0]);
+				Hammer.each($('.build li span'),function(item){
+					var objHammer = new Hammer(item);
+					objHammer.on('tap',get_build_id);
+				})
+				Hammer.each($('.floor li a'),function(item){
+					var objHammer = new Hammer(item);
+					objHammer.on('tap',get_floor_id);
+				})
+				select_build.on('tap',function(e){
+					if($(e.target).closest('li').hasClass('up')){
+						
+						select_build_on();
+					}else{
+	
+						select_build_off();
+					}
+				});
+				select_floor.on('tap',function(e){
+					if($(e.target).closest('li').hasClass('up')){
+						
+						select_floor_on();
+					}else{
+						
+						select_floor_off();
+					}
+				});
+				
+				i_know.on('tap',i_know_fn);
+				
+				tab_map.on('tap',function(){
+					show_list();
+					refresh();
+				});
+				tab_list.on('tap',function(){
+					show_map();
+					refresh();
+				});
+			}
+			function get_build_id(e){
+				$(e.target).closest('li').addClass('select');
+				$(e.target).closest('li').siblings().removeClass('select');
+				var html = e.target.innerText;
+				$('.select_build span').html(html);
+				var time = setTimeout(function(){
+					select_build_off();
+					refresh();
+				},100)
+			}
+			function get_floor_id(e){
+				console.log(e.target)
+				$(e.target).closest('li').addClass('select');
+				$(e.target).closest('li').siblings().removeClass('select');
+				var html = e.target.innerText;
+				$('.select_floor span').html(html);
+				var time = setTimeout(function(){
+					select_floor_off();
+					refresh();
+				},100)
+			}
+			function select_build_on(){
+				$('.build').removeClass('hide');
+				select_floor_off();
+				$('.pop .mask').removeClass('hide');
+				$('.select_build').removeClass('up').addClass('down');
+				
+			}
+			function select_build_off(){
+				$('.build').addClass('hide');
+				$('.pop .mask').addClass('hide');
+				$('.select_build').removeClass('down').addClass('up');
+				
+			}
+			function select_floor_on(){
+				var data = $('.select_build span').data('id');
+				if(data == '0'){
+					$('.alert').removeClass('hide');
+					return;
+				}
+				
+				$('.floor').removeClass('hide');
+				select_build_off();
+				$('.pop .mask').removeClass('hide');
+				$('.select_floor').removeClass('up').addClass('down');
+				
+			}
+			function select_floor_off(){
+				$('.floor').addClass('hide');
+				$('.pop .mask').addClass('hide');
+				$('.select_floor').removeClass('down').addClass('up');
+			}
+			function show_list(){
+				$('.tab_map').addClass('hide');
+				$('.tab_list').removeClass('hide');
+				
+			}
+			function show_map(){
+				$('.tab_map').removeClass('hide');
+				$('.tab_list').addClass('hide');
+				
+			}
+			
+			function i_know_fn(){
+				$('.alert').addClass('hide');
+			}
+			function refresh(){
+				
+				if($('.tab_map').hasClass('hide')){
+					refresh_shopping_list();
+				}else{
+					if(data = '0'){
+						refresh_home_view();
+						
+					}else{
+						refresh_full_view()
+					}
+				}
+			}
+			function refresh_home_view(){
+				
+				var html = template("total_view");
+				$('.content').html(html);
+			}
+			function refresh_full_view(){
+				
+				var html = template("full_view");
+				$('.content').html(html);
+			}
+			function refresh_shopping_list(){
+				
+				var html = template("shopping_list");
+				$('.content').html(html);
+			}
+			init();
+		}();
+	</script>
+</html>

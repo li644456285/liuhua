@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="../css/common.css" />
+		<script type="text/javascript" src="../js/common.js"></script>
+	</head>
+	<style type="text/css">
+		.content {
+			padding: 0 14px;
+		}
+		
+		.content .title {
+			font-size: 21px;
+			text-align: center;
+			margin: 0.52rem 0 0.16rem;
+		}
+		
+		.content .time {
+			color: #999;
+			font-size: 12px;
+			margin-bottom: 14px;
+		}
+		
+		.content .intro {
+			text-align: justify;
+			word-break: break-all;
+		}
+	</style>
+
+	<body>
+		<header>
+			<a href="../index.html"><img src="../images/home.png" alt="" /></a>
+			<div class="title">广州流花展贸中心</div>
+		</header>
+		<script type="text/temp" id="content_temp">
+			{{if data}}
+			<div class="title">{{data.banner_title}}</div>
+			<div class="time">{{data.create_time}}</div>
+			<div class="intro">{{data.banner_content}}</div>
+			{{else}}
+			<div style="font-size:16px;padding-top:15px;">暂无内容</div>
+			{{/if}}
+		</script>
+		<div class="content">
+
+		</div>
+	</body>
+	<script type="text/javascript" src="../js/jquery-1.11.2.js"></script>
+	<script type="text/javascript" src="../js/template.js"></script>
+	<script>
+		;! function() {
+			var banner_id;
+			
+			function ray_html() {
+				var url = "http://120.77.49.17:8080/liuhua/app/HomePage/showBannerContent.do";
+				$.ajax({
+						type: "post",
+						url: url,
+						data: "{'banner_id':"+ parseInt(banner_id)+"}",
+						contentType: 'application/json;charset=UTF-8',
+						async: false,
+					})
+					.success(function(result) {
+						template.config("escape", false);
+						var html = template('content_temp', result);
+						$('.content').html(html);
+
+					})
+					.error(function() {
+					location.href = "../error.html";
+					});
+			}
+
+			function getQueryString(name) {
+			    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+			    var r = window.location.search.substr(1).match(reg);
+			    if (r != null) return unescape(r[2]); return null;
+			}
+			
+
+			//判断是否是微信
+			function init() {
+				banner_id = getQueryString("banner_id");
+				ray_html();
+			}
+			init();
+		}();
+	</script>
+
+</html>

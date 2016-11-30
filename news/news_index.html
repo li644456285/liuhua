@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="../css/mui.min.css" />
+		<link rel="stylesheet" href="../css/reset.css" />
+		<link rel="stylesheet" href="../css/common.css" />
+		
+		<script type="text/javascript" src="../js/common.js"></script>
+		<script type="text/javascript" src="../js/mui.min.js"></script>
+		<script src="../js/jquery-1.11.2.js"></script>
+		
+		<title></title>
+		<style>
+			header{
+				position:relative;
+				z-index: 3;
+			}
+			.section .main_pic{
+				width: 6.4rem;
+				height: 2.95rem;
+				/*background: url(../images/view_gz.png);*/
+				background-size:100%;
+				display:block;
+				
+			}
+			.section p{
+				font-size:16px;
+				color:#fff;
+				/*text-overflow: ellipsis;*/
+				/*white-space:nowrap;*/
+				overflow: hidden;
+				/*width: 240px;*/
+				text-align:center;
+				line-height: 2.95rem;
+				width:100%;
+				height:2.95rem;
+				background:rgba(0,0,0,0.4);
+				/*margin:auto;*/
+				
+			}
+			.section .intro{
+				font-size:13px;
+				color:#959595;
+				padding: 10px;
+				text-align:justify;
+				overflow:hidden;
+				
+			}
+			.section .intro .time{
+				font-size:10px;
+				/*line-height: 26px;*/
+				float: right;
+				-webkit-transform: translateY(2px);
+			}
+			
+			.mui-content{
+				padding-top:44px;
+				background:#fff;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<a href="../index.html"><img src="../images/home.png" alt="" /></a>
+			<div class="title"><img src="../images/liuhua_center.png" alt="" /></div>
+		</header>
+		<!--下拉刷新容器-->
+		<div class="mui-content section">
+		    <div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+				<div class="mui-scroll">
+					<!--数据列表-->
+					<div class="list_wrap">
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script>
+		var count = 0;
+		var pageIndex = -1;
+		var pageSize = 10;
+		init();
+		function init(){
+			get_list();
+			aEvent();
+			mui.init({
+				pullRefresh: {
+					container: '#pullrefresh',
+					down: {
+						callback: pulldownRefresh
+					},
+					up: {
+						contentrefresh: '正在加载...',
+						callback: pullupRefresh
+					}
+				}
+			});
+		}
+		function get_list(){
+			var url = "http://120.77.49.17:8080/liuhua/app/HomePage/getInformationList.do";
+			pageIndex++;
+//			console.log(pageIndex)
+			var data = "{'pageIndex':"+pageIndex*pageSize+",'pageSize':"+pageSize+"}";
+			$.ajax({
+				type:"post",
+				url:url,
+				data:data,
+				contentType: 'application/json;charset=UTF-8',
+				async: false
+			})
+			.success(function(result){
+			
+				console.log(result)
+				if(result.data.length == 0){
+					count = 1;
+//					return;
+				}
+				fill_list(result);
+				
+			})
+			.fail(function(){
+//				location.href = "../error.html";
+			});
+		}
+		function fill_list(result){
+			for(var i = 0;i < result.data.length;i++){
+				var domNode = 
+					'<a href="news_detail.html?information_id='+result.data[i].information_id+'" class="main_pic" style="background:url('+result.data[i].information_img+')"><p>'+result.data[i].title+'</p></a>'+
+					'<div class="intro">'+result.data[i].synopsis+'<span class="time">'+result.data[i].create_time+'</span></div>';
+				$('.list_wrap').append(domNode);
+			}
+//			
+		}
+		
+		/**
+		 * 上拉加载具体业务实现
+		 */
+		function pullupRefresh() {
+			setTimeout(function() {
+				get_list();
+				mui('#pullrefresh').pullRefresh().endPullupToRefresh((count)); //参数为true代表没有更多数据了。
+				
+			}, 1500);
+		}
+		function pulldownRefresh(){
+			setTimeout(function() {
+				mui('#pullrefresh').pullRefresh().endPulldownToRefresh(); 
+				
+			}, 15);
+		}
+		function aEvent(){
+			mui('.list_wrap').on('tap','a',function(){
+				location.href = $(this).attr('href');
+			})
+		}
+	</script>
+</html>

@@ -1,0 +1,180 @@
+{
+	"index.html": {
+		"resources": [
+			"images/pink.jpg",
+			"js/mui.min.js",
+			"images/img.jpg",
+			"css/mui.min.css",
+			"images/show.jpg",
+			"images/fang.png",
+			"images/paper.png",
+			"images/liuhua.png",
+			"images/yuan.png",
+			"images/yang.png",
+			"images/book.png",
+			"images/map.png",
+			"images/bhouse.png",
+			"images/xiao.png",
+			"images/you.png",
+			"images/fly.png",
+			"images/gong.png",
+			"images/car.png",
+			"images/sui.png",
+			"images/huo.png",
+			"images/tian.png",
+			"images/ren.png",
+			"images/house.png",
+			"images/heart.png",
+			"images/fork.png",
+			"images/ting.png",
+			"images/word.png",
+			"images/movie.png",
+			"css/reset.css",
+			"js/common.js",
+			"images/fang2.png",
+			"css/index.css",
+			"about_liuhua.html",
+			"main-project/fun_project.html",
+			"main-project/about_liuhua.html",
+			"main-project/travel_in_gz.html",
+			"js/mui.js",
+			"images/view_gz.png",
+			"main-project/location.html",
+			"main-project/news.html",
+			"js/jquery-1.11.2.js",
+			"images/vip_logo.png",
+			"images/home_logo_hover.png",
+			"images/zixun_logo.png",
+			"images/file.png",
+			"images/wen.png",
+			"images/about.png",
+			"images/cash.png",
+			"images/info.png",
+			"images/mai.png",
+			"tool/discount.html",
+			"images/zixun_logo_hover.png",
+			"images/home_logo.png",
+			"images/woman.jpg",
+			"images/vip_logo_hover.png"
+		],
+		"refer": [
+			"about_liuhua.html",
+			"main-project/fun_project.html",
+			"main-project/about_liuhua.html",
+			"main-project/travel_in_gz.html",
+			"main-project/location.html",
+			"main-project/news.html",
+			"tool/discount.html"
+		]
+	},
+	"about_liuhua.html": {
+		"resources": [
+			"index.html"
+		],
+		"refer": [
+			"index.html"
+		]
+	},
+	"main-project/detail.html": {
+		"resources": [
+			"fonts/mui.ttf",
+			"main-project/fun_project.html"
+		],
+		"refer": [
+			"main-project/fun_project.html"
+		]
+	},
+	"main-project/fun_project.html": {
+		"resources": [
+			"index.html",
+			"main-project/detail.html",
+			"js/mui.min.js",
+			"images/show.jpg"
+		],
+		"refer": [
+			"index.html",
+			"main-project/detail.html"
+		]
+	},
+	"main-project/travel_in_gz.html": {
+		"resources": [
+			"index.html",
+			"images/house_b.png",
+			"images/view_gz.png",
+			"images/view_list.png",
+			"js/jquery-1.11.2.js",
+			"main-project/travei_in_gz_intro.html"
+		],
+		"refer": [
+			"index.html",
+			"main-project/travei_in_gz_intro.html"
+		]
+	},
+	"main-project/about_liuhua.html": {
+		"resources": [
+			"index.html",
+			"images/pink.jpg"
+		],
+		"refer": [
+			"index.html"
+		]
+	},
+	"main-project/travei_in_gz_intro.html": {
+		"resources": [
+			"images/time.png",
+			"fonts/mui.ttf",
+			"images/net.png",
+			"images/ticket.png",
+			"images/gift.png",
+			"images/location.png",
+			"images/share.png",
+			"main-project/travel_in_gz.html"
+		],
+		"refer": [
+			"main-project/travel_in_gz.html"
+		]
+	},
+	"main-project/location.html": {
+		"resources": [
+			"js/mui.min.js",
+			"images/map-pot.png",
+			"index.html",
+			"images/未标题-1.png",
+			"images/train.png",
+			"images/subway.png",
+			"js/jquery-1.11.2.js",
+			"images/address.png",
+			"images/position.png"
+		],
+		"refer": [
+			"index.html"
+		]
+	},
+	"main-project/news.html": {
+		"resources": [
+			"main-project/news-info.html",
+			"index.html",
+			"js/mui.min.js"
+		],
+		"refer": [
+			"main-project/news-info.html",
+			"index.html"
+		]
+	},
+	"main-project/news-info.html": {
+		"resources": [
+			"main-project/news.html",
+			"images/show.jpg",
+			"fonts/mui.ttf"
+		],
+		"refer": [
+			"main-project/news.html"
+		]
+	},
+	"tool/discount.html": {
+		"resources": [
+			"images/view_list.png",
+			"images/house.png"
+		]
+	}
+}
